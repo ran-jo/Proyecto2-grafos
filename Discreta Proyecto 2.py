@@ -78,7 +78,7 @@ while True:
         if cont != "S": break
 
 
-print(grafo.number_of_edges(), "conexiones")
+print(" ->", grafo.number_of_edges(), "conexiones")
 
 
 
@@ -94,7 +94,7 @@ fw_eccen = {c: max( {v:k for k, v in fw_paths[c].items()} ) for c in fw_paths}
 min_eccen = min(fw_eccen.values())
 center = [c for c in fw_eccen if fw_eccen[c] == min_eccen]
 
-print("El centro del grafo se encuentra en la ciudad(es)", ", ".join(center), "con eccentricidad de", min_eccen)
+print("-> El centro del grafo se encuentra en la ciudad(es)", ", ".join(center), "con eccentricidad de", min_eccen)
 
 print()
 
@@ -114,7 +114,7 @@ while True:
 
     algoritmo = int(input_loop("   Desea utilizar Dijkstra (1) o Bellman-Ford (2)?: ", lambda x: True if x == "1" or x == "2" else False, "    Ingrese el algoritmo a utilizar"))
 
-    #               Bellman-Ford                        o                          Dijkstra
+    #         Bellman-Ford                o              Dijkstra
     func = nx.bellman_ford_path if algoritmo - 1 else nx.dijkstra_path
 
     path = func(grafo, ciudades[int(node1) - 1], ciudades[int(node2) - 1])
@@ -134,29 +134,4 @@ while True:
 
 
 print("Feliz dia :D")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
